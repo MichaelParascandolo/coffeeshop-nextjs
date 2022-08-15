@@ -17,7 +17,7 @@ const Main = () => {
           </ul>
         </div>
         <h3 className="text-gray-00 flex justify-center text-2xl mt-2 tracking-widest font-nav">
-          Coffee | Tea | Shakes
+          Coffee | Tea | Smoothies
         </h3>
       </div>
     </>
