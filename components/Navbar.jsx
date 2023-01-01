@@ -22,7 +22,7 @@ const Navbar = () => {
           {nav ? <ImMenu4 size={35} /> : <ImMenu3 size={35} />}
         </button>
         {nav ? (
-          <div className="absolute bg-black/90 border-2 border-[#14261D] p-10 right-10 top-20 rounded-xl shadow-lg shadow-gray-900">
+          <div className="absolute bg-black/95 border-2 border-[#14261D] p-10 right-10 top-20 rounded-xl shadow-lg shadow-gray-900">
             <ul>
               <li className={styles.mobileItem}>
                 <a href="#" onClick={() => setNav(!nav)}>
