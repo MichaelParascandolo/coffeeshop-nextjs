@@ -1,19 +1,54 @@
-import React from "react";
-import { GrMenu } from "react-icons/gr";
+import React, { useState } from "react";
+import { ImMenu3, ImMenu4 } from "react-icons/im";
 import Logo from "./Logo";
 
 const Navbar = () => {
+  const [nav, setNav] = useState(false);
   const styles = {
     item: "px-4 font-nav text-white tracking-widest",
-    link: "border-b-2 border-transparent hover:border-[#14261D]",
+    link: "border-b-2 border-transparent hover:border-[#CA955F]",
+    mobileItem: "py-3 font-nav text-white text-xl",
   };
   return (
     <>
-      {/* <div className="h-screen bg-[url('/assets/cover.jpg')]"> */}
       <div className="bg-black/90 rounded-lg text-white mt-5 flex justify-between shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D]">
-        <Logo />
-        {/* <GrMenu /> */}
-        <div className="hidden mt-5 mr-5 md:flex">
+        <div className="ml-4 p-3">
+          <Logo size={"text-4xl"} sub={true} />
+        </div>
+        <button
+          className="flex md:hidden mr-3 my-auto text-white"
+          onClick={() => setNav(!nav)}
+        >
+          {nav ? <ImMenu4 size={35} /> : <ImMenu3 size={35} />}
+        </button>
+        {nav ? (
+          <div className="absolute bg-black/90 border-2 border-[#14261D] p-10 right-10 top-20 rounded-xl shadow-lg shadow-gray-900">
+            <ul>
+              <li className={styles.mobileItem}>
+                <a href="#" onClick={() => setNav(!nav)}>
+                  About
+                </a>
+              </li>
+              <li className={styles.mobileItem}>
+                <a href="#" onClick={() => setNav(!nav)}>
+                  Menu
+                </a>
+              </li>
+              <li className={styles.mobileItem}>
+                <a href="#" onClick={() => setNav(!nav)}>
+                  Reviews
+                </a>
+              </li>
+              <li className={styles.mobileItem}>
+                <a href="#" onClick={() => setNav(!nav)}>
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        ) : null}
+
+        <div className="hidden my-auto mr-5 md:flex">
           <span className={styles.item}>
             <a href="#" className={styles.link}>
               About
@@ -36,9 +71,6 @@ const Navbar = () => {
           </span>
         </div>
       </div>
-      {/* <h3 className="text-gray-00 flex justify-center text-2xl mt-2 tracking-widest font-nav">
-          Coffee | Tea | Smoothies
-        </h3> */}
     </>
   );
 };
