@@ -11,6 +11,9 @@ const Footer = () => {
           </span>
           <Logo sub={false} size={"text-lg"} />
         </div>
+        <span className="text-[#CA955F] -mt-3 mb-1 font-nav flex justify-center">
+          Michael Parascandolo
+        </span>
       </div>
     </>
   );

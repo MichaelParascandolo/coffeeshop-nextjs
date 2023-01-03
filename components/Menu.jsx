@@ -1,13 +1,31 @@
 import React from "react";
 import { BiCoffeeTogo, BiCoffee } from "react-icons/bi";
 import Menuitem from "./Menuitem";
-const styles = {
-  label:
-    "text-gray-800 font-nav text-2xl text-center tracking-widest font-bold",
-  // menu: "bg-gray-300/70 rounded-2xl p-3 border-solid border-2 border-black shadow-lg shadow-black",
-  // bar: "h-1 bg-gray-800 rounded-xl",
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAIrge1H6hj4z5RA214L5zdGA-ajRPj6DI",
+  authDomain: "coolbeans-6a23f.firebaseapp.com",
+  projectId: "coolbeans-6a23f",
+  storageBucket: "coolbeans-6a23f.appspot.com",
+  messagingSenderId: "1027738561156",
+  appId: "1:1027738561156:web:27f7e4a6038254435730d1",
 };
+
 const Menu = () => {
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  const styles = {
+    label:
+      "text-gray-800 font-nav text-2xl text-center tracking-widest font-bold",
+    // menu: "bg-gray-300/70 rounded-2xl p-3 border-solid border-2 border-black shadow-lg shadow-black",
+    // bar: "h-1 bg-gray-800 rounded-xl",
+  };
   return (
     <div className="shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D] rounded-lg bg-black/90 p-5 mt-5">
       <div className="grid grid-cols-1 md:grid-cols-3 justify-center">
@@ -30,13 +48,13 @@ const Menu = () => {
           <BiCoffee size={100} className="text-[#CA955F]" />
         </div>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
         <div className="bg-[#212121] rounded-2xl p-3 border-solid border-4 border-[#88542D] shadow-lg shadow-black">
           <p className={styles.label}>
             <span className="text-[#88542D]">Coffee</span>
           </p>
           <div className="h-0.5 bg-[#88542D] rounded-xl" />
-          <Menuitem name={"Expresso"} price={"3.00"} />
+          <Menuitem name={"Espresso"} price={"3.00"} />
           <Menuitem name={"Americano"} price={"4.25"} />
           <Menuitem name={"Cappuccino"} price={"4.75"} />
           <Menuitem name={"Latte"} price={"4.75"} />
@@ -63,7 +81,7 @@ const Menu = () => {
           <Menuitem name={"Iced Turmeric Latte"} price={"5.75"} />
           <Menuitem name={"Iced Green Tea Latte"} price={"4.25"} />
         </div>
-        <div className="bg-[#212121] rounded-2xl p-3 border-solid border-4 border-[#DC515F] shadow-lg shadow-black">
+        <div className="bg-[#212121]/20 rounded-2xl md:col-span-2 p-3 lg:col-span-1 border-solid border-4 border-[#DC515F] shadow-lg shadow-black">
           <p className={styles.label}>
             <span className="text-[#DC515F]">Shakes</span>
           </p>

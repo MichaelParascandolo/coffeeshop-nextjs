@@ -5,6 +5,7 @@ import Contact from "../components/Contact";
 import Menu from "../components/Menu";
 import Navbar from "../components/Navbar";
 import Socials from "../components/Socials";
+import Reviews from "../components/Reviews";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
           <Navbar />
           <Socials />
           <About />
+          <Reviews />
           <Menu />
           <Contact />
           <Socials />
