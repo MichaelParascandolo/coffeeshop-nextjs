@@ -3,8 +3,9 @@ import { GrFacebook, GrInstagram, GrMail, GrTwitter } from "react-icons/gr";
 
 const Socials = () => {
   const styles = {
-    item: "px-4 font-nav text-[#CA955F]",
+    item: "font-nav text-[#CA955F]",
     size: "30",
+    bar: "bg-white/50 h-[100] w-0.5 rounded-2xl",
   };
   return (
     <>
@@ -18,7 +19,8 @@ const Socials = () => {
               <GrFacebook size={styles.size} />
             </li>
           </a>
-          <span className="text-white text-xl select-none">|</span>
+          {/* <span className="text-white text-xl select-none">|</span> */}
+          <div className={styles.bar} />
           <a
             href="#"
             className="hover:scale-110 duration-300 eas-in-out transition-all"
@@ -27,7 +29,8 @@ const Socials = () => {
               <GrTwitter size={styles.size} />
             </li>
           </a>
-          <span className="text-white text-xl select-none">|</span>
+          {/* <span className="text-white text-xl select-none">|</span> */}
+          <div className={styles.bar} />
           <a
             href="#"
             className="hover:scale-110 duration-300 eas-in-out transition-all"
@@ -36,7 +39,8 @@ const Socials = () => {
               <GrInstagram size={styles.size} />
             </li>
           </a>
-          <span className="text-white text-xl select-none">|</span>
+          <div className={styles.bar} />
+          {/* <span className="text-white text-xl select-none">|</span> */}
           <a
             href="#"
             className="hover:scale-110 duration-300 eas-in-out transition-all"

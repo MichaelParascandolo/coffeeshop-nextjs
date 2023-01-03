@@ -36,7 +36,7 @@ const Menu = () => {
           <div className="text-center">
             <h2 className="text-4xl font-mono tracking-widest text-white">
               {/* <h2 className="text-4xl font-mono tracking-widest text-[#CA955F]"> */}
-              Drinks
+              Menu
             </h2>
             <p className="pt-2 text-gray-400 tracking-wide">Made with love.</p>
             <button className="text-white border-2 border-[#CA955F] bg-black py-2 px-10 my-4 rounded-xl font-nav tracking-widest hover:bg-black/10 hover:px-14 transition-all ease-in-out duration-500">

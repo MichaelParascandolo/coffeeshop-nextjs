@@ -5,6 +5,7 @@
 
 body {
   background-image: url("/assets/cover.jpg");
+  /* background-position: right; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

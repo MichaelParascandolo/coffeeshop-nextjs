@@ -3,7 +3,7 @@ import { ImMenu3, ImMenu4 } from "react-icons/im";
 import Logo from "./Logo";
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
+  const [nav, setNav] = useState<boolean>(false);
   const styles = {
     item: "px-4 font-nav text-white tracking-widest",
     link: "border-b-2 border-transparent hover:border-[#CA955F] ease-in-out duration-300 transition-all",

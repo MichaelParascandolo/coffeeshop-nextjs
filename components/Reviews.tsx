@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import Reviewitem from "./Reviewitem";
 
 // example
@@ -38,7 +37,7 @@ const Reviews = () => {
           text={
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, assumenda!"
           }
-          google={false}
+          google={true}
           name={"Customer Name"}
         />
         <Reviewitem
@@ -48,7 +47,7 @@ const Reviews = () => {
           text={
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, assumenda!"
           }
-          google={true}
+          google={false}
           name={"Customer Name"}
         />
       </div>
