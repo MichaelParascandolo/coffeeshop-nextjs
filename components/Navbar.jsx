@@ -6,7 +6,7 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const styles = {
     item: "px-4 font-nav text-white tracking-widest",
-    link: "border-b-2 border-transparent hover:border-[#CA955F]",
+    link: "border-b-2 border-transparent hover:border-[#CA955F] ease-in-out duration-300 transition-all",
     mobileItem: "py-3 font-nav text-white text-xl",
   };
   return (
@@ -15,6 +15,7 @@ const Navbar = () => {
         <div className="ml-4 p-3">
           <Logo size={"text-4xl"} sub={true} />
         </div>
+        {/* mobile navbar start */}
         <button
           className="flex md:hidden mr-3 my-auto text-white"
           onClick={() => setNav(!nav)}
@@ -47,7 +48,7 @@ const Navbar = () => {
             </ul>
           </div>
         ) : null}
-
+        {/* mobile navbar end */}
         <div className="hidden my-auto mr-5 md:flex">
           <span className={styles.item}>
             <a href="#" className={styles.link}>

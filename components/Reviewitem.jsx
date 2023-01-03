@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { BsStarFill } from "react-icons/bs";
+import { FaGoogle, FaYelp } from "react-icons/fa";
 
-const Reviewitem = ({ picture, text }) => {
+const Reviewitem = ({ picture, text, google, name }) => {
   const styles = {
-    box: "shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D] rounded-lg bg-black/90 p-3",
-    star: "text-yellow-300 text-xl mx-1",
+    box: "shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D] rounded-lg bg-black/90 p-3 select-none",
+    star: "text-yellow-300 text-xl mx-2",
   };
   return (
     <>
@@ -18,7 +19,7 @@ const Reviewitem = ({ picture, text }) => {
           <BsStarFill className={styles.star} />
         </div>
         <div className="flex bg-[#212121]/60 rounded-xl border-2 border-[#14261D]">
-          <div className="my-auto ml-4">
+          <div className="m-3 my-auto ">
             <Image
               src={picture}
               width={80}
@@ -29,11 +30,14 @@ const Reviewitem = ({ picture, text }) => {
               className="rounded-xl"
             />
           </div>
-          <p className="text-white ml-2 p-3">{text}</p>
+          <p className="text-white m-3">{text}</p>
+          <div className="text-[#CA955F] mr-2 mt-2">
+            {google ? <FaGoogle size={18} /> : <FaYelp size={18} />}
+          </div>
         </div>
-        {/* <p className="text-white text-center tracking-wider mt-2 -mb-2">
-          First Name
-        </p> */}
+        <p className="text-white text-center tracking-widest mt-1 -mb-2 font-mono font-bold">
+          {name}
+        </p>
       </div>
     </>
   );

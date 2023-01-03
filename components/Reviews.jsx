@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Reviewitem from "./Reviewitem";
 
 // example
@@ -12,28 +12,44 @@ const Reviews = () => {
     <>
       <div className="justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-[100%] mt-5">
         <Reviewitem
-          picture={"https://randomuser.me/api/portraits/women/50.jpg"}
+          picture={`https://randomuser.me/api/portraits/women/${Math.floor(
+            Math.random() * 50
+          )}.jpg`}
           text={
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, assumenda!"
           }
+          google={true}
+          name={"Customer Name"}
         />
         <Reviewitem
-          picture={"https://randomuser.me/api/portraits/women/63.jpg"}
+          picture={`https://randomuser.me/api/portraits/men/${Math.floor(
+            Math.random() * 50
+          )}.jpg`}
           text={
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic corporis mollitia sapiente aspernatur!"
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, assumenda!"
           }
+          google={false}
+          name={"Customer Name"}
         />
         <Reviewitem
-          picture={"https://randomuser.me/api/portraits/men/49.jpg"}
+          picture={`https://randomuser.me/api/portraits/women/${Math.floor(
+            Math.random() * 50
+          )}.jpg`}
           text={
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic corporis mollitia sapiente aspernatur!"
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, assumenda!"
           }
+          google={false}
+          name={"Customer Name"}
         />
         <Reviewitem
-          picture={"https://randomuser.me/api/portraits/men/19.jpg"}
+          picture={`https://randomuser.me/api/portraits/men/${Math.floor(
+            Math.random() * 50
+          )}.jpg`}
           text={
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic corporis mollitia sapiente aspernatur!"
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, assumenda!"
           }
+          google={true}
+          name={"Customer Name"}
         />
       </div>
     </>

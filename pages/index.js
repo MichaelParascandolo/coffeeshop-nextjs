@@ -10,11 +10,10 @@ import Reviews from "../components/Reviews";
 export default function Home() {
   return (
     <>
-      {/* <div className="max-w-[960px] mx-auto"> */}
+      <Head>
+        <title>CoolBeans: coffee | tea | shakes</title>
+      </Head>
       <div className="flex justify-center">
-        <Head>
-          <title>CoolBeans: Coffee - Tea - Shakes</title>
-        </Head>
         <div className="w-[90%] max-w-[1200px]">
           <Navbar />
           <Socials />

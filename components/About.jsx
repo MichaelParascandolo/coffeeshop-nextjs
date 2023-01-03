@@ -9,7 +9,7 @@ const About = () => {
   return (
     <>
       <div className="justify-center grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 w-[100%] mt-5">
-        <div className="shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D] rounded-lg bg-black/90 p-3">
+        <div className="shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D] rounded-lg bg-black/90 p-3 select-none">
           <div className="h-auto">
             <div className="mt-0">
               <h2 className="text-4xl font-mono tracking-widest text-white">
@@ -29,9 +29,9 @@ const About = () => {
                 end pour and everything in between, we obsess on every possible
                 variable. Our ambition is to serve great tasting coffee.
               </p>
-              <p className={styles.para}>- CoolBeans Team</p>
+              {/* <p className={styles.para}>- CoolBeans Team</p> */}
             </div>
-            <div className="justify-center flex">
+            <div className="justify-center flex mt-5">
               <div className="py-2 text-center">
                 <Logo size={"text-[50px]"} sub={true} />
               </div>
