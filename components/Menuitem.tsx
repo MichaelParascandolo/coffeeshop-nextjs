@@ -1,6 +1,6 @@
 import React from "react";
 
-const Menuitem = ({ name, price }) => {
+const Menuitem = ({ name, price }: { name: string; price: string }) => {
   return (
     <>
       <div className="text-gray-300 py-2 flex justify-between capitalize tracking-widest font-nav select-none hover:px-8 transition-all duration-300 ease-in-out">

@@ -9,14 +9,15 @@ import Reviewitem from "./Reviewitem";
 const Reviews = () => {
   return (
     <>
-      <div className="justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-[100%] mt-5">
+      <div
+        className="justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-[100%] mt-5"
+        id="reviews"
+      >
         <Reviewitem
           picture={`https://randomuser.me/api/portraits/women/${Math.floor(
             Math.random() * 50
           )}.jpg`}
-          text={
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, assumenda!"
-          }
+          text={"Lorem ipsum dolor sit amet consectetur adipisicing"}
           google={true}
           name={"Customer Name"}
         />
@@ -24,9 +25,7 @@ const Reviews = () => {
           picture={`https://randomuser.me/api/portraits/men/${Math.floor(
             Math.random() * 50
           )}.jpg`}
-          text={
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, assumenda!"
-          }
+          text={"Lorem ipsum dolor sit amet consectetur adipisicing"}
           google={false}
           name={"Customer Name"}
         />
@@ -34,9 +33,7 @@ const Reviews = () => {
           picture={`https://randomuser.me/api/portraits/women/${Math.floor(
             Math.random() * 50
           )}.jpg`}
-          text={
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, assumenda!"
-          }
+          text={"Lorem ipsum dolor sit amet consectetur adipisicing"}
           google={true}
           name={"Customer Name"}
         />
@@ -44,9 +41,7 @@ const Reviews = () => {
           picture={`https://randomuser.me/api/portraits/men/${Math.floor(
             Math.random() * 50
           )}.jpg`}
-          text={
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, assumenda!"
-          }
+          text={"Lorem ipsum dolor sit amet consectetur adipisicing"}
           google={false}
           name={"Customer Name"}
         />

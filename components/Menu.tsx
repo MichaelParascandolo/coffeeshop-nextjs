@@ -27,7 +27,10 @@ const Menu = () => {
     // bar: "h-1 bg-gray-800 rounded-xl",
   };
   return (
-    <div className="shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D] rounded-lg bg-black/90 p-5 mt-5">
+    <div
+      className="shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D] rounded-lg bg-black/90 p-5 mt-5"
+      id="menu"
+    >
       <div className="grid grid-cols-1 md:grid-cols-3 justify-center select-none">
         <div className="hidden md:flex justify-center my-auto">
           <BiCoffeeTogo size={100} className="text-[#CA955F]" />

@@ -9,7 +9,7 @@ const Footer = () => {
           <span className="text-[#CA955F] mr-2 mt-1 font-nav">
             © {new Date().getFullYear()}
           </span>
-          <Logo sub={false} size={"text-lg"} />
+          <Logo size={"text-lg"} />
         </div>
         <span className="text-[#CA955F] -mt-3 mb-1 font-nav flex justify-center">
           Michael Parascandolo

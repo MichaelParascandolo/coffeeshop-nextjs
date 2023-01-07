@@ -26,22 +26,22 @@ const Navbar = () => {
           <div className="absolute bg-black/95 border-2 border-[#14261D] p-10 right-10 top-20 rounded-xl shadow-lg shadow-gray-900">
             <ul>
               <li className={styles.mobileItem}>
-                <a href="#" onClick={() => setNav(!nav)}>
+                <a href="#about" onClick={() => setNav(!nav)}>
                   About
                 </a>
               </li>
               <li className={styles.mobileItem}>
-                <a href="#" onClick={() => setNav(!nav)}>
-                  Menu
-                </a>
-              </li>
-              <li className={styles.mobileItem}>
-                <a href="#" onClick={() => setNav(!nav)}>
+                <a href="#reviews" onClick={() => setNav(!nav)}>
                   Reviews
                 </a>
               </li>
               <li className={styles.mobileItem}>
-                <a href="#" onClick={() => setNav(!nav)}>
+                <a href="#menu" onClick={() => setNav(!nav)}>
+                  Menu
+                </a>
+              </li>
+              <li className={styles.mobileItem}>
+                <a href="#contact" onClick={() => setNav(!nav)}>
                   Contact
                 </a>
               </li>
@@ -51,22 +51,22 @@ const Navbar = () => {
         {/* mobile navbar end */}
         <div className="hidden my-auto mr-5 md:flex">
           <span className={styles.item}>
-            <a href="#" className={styles.link}>
+            <a href="#about" className={styles.link}>
               About
             </a>
           </span>
           <span className={styles.item}>
-            <a href="#" className={styles.link}>
-              Menu
-            </a>
-          </span>
-          <span className={styles.item}>
-            <a href="#" className={styles.link}>
+            <a href="#reviews" className={styles.link}>
               Reviews
             </a>
           </span>
           <span className={styles.item}>
-            <a href="#" className={styles.link}>
+            <a href="#menu" className={styles.link}>
+              Menu
+            </a>
+          </span>
+          <span className={styles.item}>
+            <a href="#contact" className={styles.link}>
               Contact
             </a>
           </span>
