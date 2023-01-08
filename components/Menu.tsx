@@ -123,6 +123,9 @@ const Menu = () => {
           <Menuitem name={"Custom Smoothie"} price={"9.50"} /> */}
         </div>
       </div>
+      <p className="text-gray-600 text-center">
+        * prices shown are medium; large is $0.25 more *
+      </p>
     </div>
   );
 };
