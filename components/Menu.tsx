@@ -1,24 +1,37 @@
-import React from "react";
+import { collection, onSnapshot, query } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 import { BiCoffeeTogo, BiCoffee } from "react-icons/bi";
 import Menuitem from "./Menuitem";
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAIrge1H6hj4z5RA214L5zdGA-ajRPj6DI",
-  authDomain: "coolbeans-6a23f.firebaseapp.com",
-  projectId: "coolbeans-6a23f",
-  storageBucket: "coolbeans-6a23f.appspot.com",
-  messagingSenderId: "1027738561156",
-  appId: "1:1027738561156:web:27f7e4a6038254435730d1",
-};
+import { db } from "./Firebase";
 
 const Menu = () => {
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+  const [coffee, setCoffee] = useState([]);
+  const [tea, setTea] = useState([]);
+  const [shakes, setShakes] = useState([]);
+
+  useEffect(() => {
+    const data = query(collection(db, "drinks"));
+    onSnapshot(data, (querySnapshot) => {
+      let coffeeArr = [];
+      let teaArr = [];
+      let shakesArr = [];
+      // sort each menu item into coffee,tea,or shakes
+      querySnapshot.forEach((doc) => {
+        if (doc.data().type === "coffee") {
+          coffeeArr.push({ ...doc.data() });
+        } else if (doc.data().type === "tea") {
+          teaArr.push({ ...doc.data() });
+        } else {
+          shakesArr.push({ ...doc.data() });
+        }
+        // arr.push({ ...doc.data(), id: doc.id });
+      });
+      // set each state to sorted array
+      setCoffee(coffeeArr.sort((a, b) => (a.price > b.price ? 1 : -1)));
+      setTea(teaArr.sort((a, b) => (a.price > b.price ? 1 : -1)));
+      setShakes(shakesArr.sort((a, b) => (a.price > b.price ? 1 : -1)));
+    });
+  }, []);
 
   const styles = {
     label:
@@ -57,7 +70,10 @@ const Menu = () => {
             <span className="text-[#88542D]">Coffee</span>
           </p>
           <div className="h-0.5 bg-[#88542D] rounded-xl" />
-          <Menuitem name={"Espresso"} price={"3.00"} />
+          {coffee.map((item) => (
+            <Menuitem name={item.name} price={item.price} key={item.id} />
+          ))}
+          {/* <Menuitem name={"Espresso"} price={"3.00"} />
           <Menuitem name={"Americano"} price={"4.25"} />
           <Menuitem name={"Cappuccino"} price={"4.75"} />
           <Menuitem name={"Latte"} price={"4.75"} />
@@ -66,14 +82,17 @@ const Menu = () => {
           <Menuitem name={"Mocha"} price={"5.75"} />
           <Menuitem name={"Cold Brew"} price={"4.75"} />
           <Menuitem name={"Nitro Cold Brew"} price={"6.00"} />
-          <Menuitem name={"Iced Latte"} price={"5.75"} />
+          <Menuitem name={"Iced Latte"} price={"5.75"} /> */}
         </div>
         <div className="bg-[#212121]/60 rounded-2xl p-3 border-solid border-4 border-[#21955F] shadow-lg shadow-black">
           <p className={styles.label}>
             <span className="text-[#21955F]">Tea</span>
           </p>
           <div className="h-0.5 bg-[#21955F] rounded-xl" />
-          <Menuitem name={"Tea"} price={"4.00"} />
+          {tea.map((item) => (
+            <Menuitem name={item.name} price={item.price} key={item.id} />
+          ))}
+          {/* <Menuitem name={"Tea"} price={"4.00"} />
           <Menuitem name={"Matcha Latte"} price={"5.50"} />
           <Menuitem name={"Green Tea Latte"} price={"4.00"} />
           <Menuitem name={"Turmeric Latte"} price={"5.50"} />
@@ -82,14 +101,17 @@ const Menu = () => {
           <Menuitem name={"Fresh Iced Tea"} price={"3.50"} />
           <Menuitem name={"Iced Matcha Latte"} price={"5.75"} />
           <Menuitem name={"Iced Turmeric Latte"} price={"5.75"} />
-          <Menuitem name={"Iced Green Tea Latte"} price={"4.25"} />
+          <Menuitem name={"Iced Green Tea Latte"} price={"4.25"} /> */}
         </div>
         <div className="bg-[#212121]/60 rounded-2xl md:col-span-2 p-3 lg:col-span-1 border-solid border-4 border-[#DC515F] shadow-lg shadow-black">
           <p className={styles.label}>
             <span className="text-[#DC515F]">Shakes</span>
           </p>
           <div className="h-0.5 bg-[#DC515F] rounded-xl" />
-          <Menuitem name={"Acai Energy"} price={"8.75"} />
+          {shakes.map((item) => (
+            <Menuitem name={item.name} price={item.price} key={item.id} />
+          ))}
+          {/* <Menuitem name={"Acai Energy"} price={"8.75"} />
           <Menuitem name={"Berry Burst"} price={"8.75"} />
           <Menuitem name={"Chunky Monkey"} price={"8.75"} />
           <Menuitem name={"Green Goddess"} price={"8.75"} />
@@ -98,7 +120,7 @@ const Menu = () => {
           <Menuitem name={"Pitaya Passion"} price={"8.75"} />
           <Menuitem name={"Protein Power"} price={"8.75"} />
           <Menuitem name={"Wellness Colada"} price={"8.75"} />
-          <Menuitem name={"Custom Smoothie"} price={"9.50"} />
+          <Menuitem name={"Custom Smoothie"} price={"9.50"} /> */}
         </div>
       </div>
     </div>

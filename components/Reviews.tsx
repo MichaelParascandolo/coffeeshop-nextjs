@@ -29,22 +29,26 @@ const Reviews = () => {
           google={false}
           name={"Customer Name"}
         />
-        <Reviewitem
-          picture={`https://randomuser.me/api/portraits/women/${Math.floor(
-            Math.random() * 50
-          )}.jpg`}
-          text={"Lorem ipsum dolor sit amet consectetur adipisicing"}
-          google={true}
-          name={"Customer Name"}
-        />
-        <Reviewitem
-          picture={`https://randomuser.me/api/portraits/men/${Math.floor(
-            Math.random() * 50
-          )}.jpg`}
-          text={"Lorem ipsum dolor sit amet consectetur adipisicing"}
-          google={false}
-          name={"Customer Name"}
-        />
+        <span className="hidden md:flex">
+          <Reviewitem
+            picture={`https://randomuser.me/api/portraits/women/${Math.floor(
+              Math.random() * 50
+            )}.jpg`}
+            text={"Lorem ipsum dolor sit amet consectetur adipisicing"}
+            google={true}
+            name={"Customer Name"}
+          />
+        </span>
+        <span className="hidden md:flex">
+          <Reviewitem
+            picture={`https://randomuser.me/api/portraits/men/${Math.floor(
+              Math.random() * 50
+            )}.jpg`}
+            text={"Lorem ipsum dolor sit amet consectetur adipisicing"}
+            google={false}
+            name={"Customer Name"}
+          />
+        </span>
       </div>
     </>
   );
