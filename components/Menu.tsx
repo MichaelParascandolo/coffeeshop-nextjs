@@ -46,30 +46,30 @@ const Menu = () => {
     >
       <div className="grid grid-cols-1 md:grid-cols-3 justify-center select-none">
         <div className="hidden md:flex justify-center my-auto">
-          <BiCoffeeTogo size={100} className="text-[#CA955F]" />
+          <BiCoffeeTogo size={100} className="text-lightBrown" />
         </div>
         <div className="flex justify-center">
           <div className="text-center">
             <h2 className="text-4xl font-mono tracking-widest text-white">
-              {/* <h2 className="text-4xl font-mono tracking-widest text-[#CA955F]"> */}
+              {/* <h2 className="text-4xl font-mono tracking-widest text-lightBrown"> */}
               Menu
             </h2>
             <p className="pt-2 text-gray-400 tracking-wide">Made with love.</p>
-            <button className="text-white border-2 border-[#CA955F] bg-black py-2 px-10 my-4 rounded-xl font-nav tracking-widest hover:bg-black/10 hover:px-14 transition-all ease-in-out duration-500">
+            <button className="text-white border-2 border-lightBrown bg-black py-2 px-10 my-4 rounded-xl font-nav tracking-widest hover:bg-black/10 hover:px-14 transition-all ease-in-out duration-500">
               Order Online
             </button>
           </div>
         </div>
         <div className="hidden md:flex justify-center my-auto">
-          <BiCoffee size={100} className="text-[#CA955F]" />
+          <BiCoffee size={100} className="text-lightBrown" />
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
-        <div className="bg-[#212121]/60 rounded-2xl p-3 border-solid border-4 border-[#88542D] shadow-lg shadow-black">
+        <div className="bg-[#212121]/60 rounded-2xl p-3 border-solid border-4 border-darkBrown shadow-lg shadow-black">
           <p className={styles.label}>
-            <span className="text-[#88542D]">Coffee</span>
+            <span className="text-darkBrown">Coffee</span>
           </p>
-          <div className="h-0.5 bg-[#88542D] rounded-xl" />
+          <div className="h-0.5 bg-darkBrown rounded-xl" />
           {coffee.map((item) => (
             <Menuitem name={item.name} price={item.price} key={item.id} />
           ))}
@@ -123,8 +123,8 @@ const Menu = () => {
           <Menuitem name={"Custom Smoothie"} price={"9.50"} /> */}
         </div>
       </div>
-      <p className="text-gray-600 text-center">
-        * prices shown are medium; large is $0.25 more *
+      <p className="text-gray-600 text-center py-2 -mb-4">
+        *medium size prices shown*
       </p>
     </div>
   );

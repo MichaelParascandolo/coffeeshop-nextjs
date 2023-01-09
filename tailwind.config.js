@@ -7,6 +7,10 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        lightBrown: "#CA955F",
+        darkBrown: "#88542D",
+      },
       fontFamily: {
         logo: ['"Pacifico"', "cursive"],
         nav: ['"DynaPuff"', "cursive"],

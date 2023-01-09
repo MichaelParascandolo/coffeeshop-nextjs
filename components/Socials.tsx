@@ -3,7 +3,7 @@ import { GrFacebook, GrInstagram, GrMail, GrTwitter } from "react-icons/gr";
 
 const Socials = () => {
   const styles = {
-    item: "font-nav text-[#CA955F]",
+    item: "font-nav text-lightBrown",
     size: "30",
     bar: "bg-white/50 h-[100] w-0.5 rounded-2xl",
   };

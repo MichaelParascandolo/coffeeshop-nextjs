@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = () => {
   const styles = {
-    itemHeader: "pt-2 text-[#CA955F] text-[20px] font-mono",
+    itemHeader: "pt-2 text-lightBrown text-[20px] font-mono",
     item: "pt-0 text-white text-[18px] font-nav",
     bar: "h-0.5 bg-gray-500 rounded-xl mt-2",
   };

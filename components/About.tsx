@@ -16,7 +16,7 @@ const About = () => {
           <div className="h-auto">
             <div className="mt-0">
               <h2 className="text-4xl font-mono tracking-widest text-white">
-                {/* <h2 className="text-4xl font-mono tracking-widest text-[#CA955F]"> */}
+                {/* <h2 className="text-4xl font-mono tracking-widest text-lightBrown"> */}
                 About
               </h2>
               <p className="pt-2 text-gray-400 tracking-wide">

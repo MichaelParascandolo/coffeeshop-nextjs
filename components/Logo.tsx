@@ -8,14 +8,14 @@ const Logo = ({ size, sub }: { size: string; sub?: boolean }) => {
         {/* <h1 className={`text-4xl p-3 tracking-widest font-logo flex`}> */}
         <a href="#">
           <h1 className={`${size} tracking-widest font-logo flex`}>
-            <span className="text-[#88542D]">
+            <span className="text-darkBrown">
               <GiCoffeeBeans />
             </span>
-            <span className="text-[#CA955F]">CoolBeans</span>
+            <span className="text-lightBrown">CoolBeans</span>
           </h1>
         </a>
         {sub ? (
-          <p className="text-[#88542D] text-xl -mt-1 tracking-widest font-nav">
+          <p className="text-darkBrown text-xl -mt-1 tracking-widest font-nav">
             Coffee | Tea | Shakes
           </p>
         ) : null}

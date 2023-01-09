@@ -41,7 +41,7 @@ const Reviewitem = ({
             />
           </div>
           <p className="text-white m-3">{text}</p>
-          <div className="text-[#CA955F] mr-2 mt-2">
+          <div className="text-lightBrown mr-2 mt-2">
             {google ? <FaGoogle size={18} /> : <FaYelp size={18} />}
           </div>
         </div>
