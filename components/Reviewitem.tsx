@@ -29,7 +29,7 @@ const Reviewitem = ({
           <BsStarFill className={styles.star} />
         </div>
         <div className="flex bg-[#212121]/60 rounded-xl border-2 border-[#14261D]">
-          <div className="m-3 my-auto ">
+          <div className="m-3 my-auto">
             <Image
               src={picture}
               width={80}
