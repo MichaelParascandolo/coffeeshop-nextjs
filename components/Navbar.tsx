@@ -7,8 +7,7 @@ const Navbar = () => {
   const styles = {
     item: "px-4 font-nav text-white tracking-widest",
     link: "border-b-2 border-transparent hover:border-lightBrown ease-in-out duration-300 transition-all",
-    mobileItem: "py-3 font-nav text-white text-xl",
-    mobileItem2: "py-2 ml-4 font-nav text-white text-md",
+    mobileItem: "py-2 ml-4 font-nav text-white text-md",
   };
   return (
     <>
@@ -24,33 +23,6 @@ const Navbar = () => {
           >
             {nav ? <ImMenu4 size={35} /> : <ImMenu3 size={35} />}
           </button>
-          {/* {nav ? (
-            <div className="absolute bg-black/95 border-2 border-[#14261D] p-10 right-10 top-20 rounded-xl shadow-lg shadow-gray-900">
-              <ul>
-                <li className={styles.mobileItem}>
-                  <a href="#about" onClick={() => setNav(!nav)}>
-                    About
-                  </a>
-                </li>
-                <li className={styles.mobileItem}>
-                  <a href="#reviews" onClick={() => setNav(!nav)}>
-                    Reviews
-                  </a>
-                </li>
-                <li className={styles.mobileItem}>
-                  <a href="#menu" onClick={() => setNav(!nav)}>
-                    Menu
-                  </a>
-                </li>
-                <li className={styles.mobileItem}>
-                  <a href="#contact" onClick={() => setNav(!nav)}>
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-          ) : null} */}
-          {/* mobile navbar end */}
           <div className="hidden my-auto mr-5 md:flex">
             <span className={styles.item}>
               <a href="#about" className={styles.link}>
@@ -74,29 +46,29 @@ const Navbar = () => {
             </span>
           </div>
         </div>
-        {/*  */}
+        {/* mobile navbar start */}
         {nav ? (
           <div>
             <ul className="pb-4">
-              <li className={styles.mobileItem2}>
+              <li className={styles.mobileItem}>
                 <a href="#about" onClick={() => setNav(!nav)}>
                   About
                 </a>
               </li>
               <div className="h-1 bg-darkBrown/70 w-[100%]" />
-              <li className={styles.mobileItem2}>
+              <li className={styles.mobileItem}>
                 <a href="#reviews" onClick={() => setNav(!nav)}>
                   Reviews
                 </a>
               </li>
               <div className="h-1 bg-darkBrown/70 w-[100%]" />
-              <li className={styles.mobileItem2}>
+              <li className={styles.mobileItem}>
                 <a href="#menu" onClick={() => setNav(!nav)}>
                   Menu
                 </a>
               </li>
               <div className="h-1 bg-darkBrown/70 w-[100%]" />
-              <li className={styles.mobileItem2}>
+              <li className={styles.mobileItem}>
                 <a href="#contact" onClick={() => setNav(!nav)}>
                   Contact
                 </a>
@@ -105,7 +77,7 @@ const Navbar = () => {
             </ul>
           </div>
         ) : null}
-        {/*  */}
+        {/* mobile navbar end */}
       </div>
     </>
   );
