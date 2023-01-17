@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import { BiCoffeeTogo, BiCoffee } from "react-icons/bi";
 import Menuitem from "./Menuitem";
 import { db } from "./Firebase";
+import Logo from "./Logo";
+import Link from "next/link";
 
-const Menu = () => {
+const Menu = ({ fullMenu }: { fullMenu?: boolean }) => {
   const [coffee, setCoffee] = useState([]);
   const [tea, setTea] = useState([]);
   const [shakes, setShakes] = useState([]);
@@ -36,8 +38,8 @@ const Menu = () => {
   const styles = {
     label:
       "text-gray-800 font-nav text-2xl text-center tracking-widest font-bold select-none",
-    // menu: "bg-gray-300/70 rounded-2xl p-3 border-solid border-2 border-black shadow-lg shadow-black",
-    // bar: "h-1 bg-gray-800 rounded-xl",
+    menu: "",
+    fullMenu: "",
   };
   return (
     <div
@@ -49,40 +51,52 @@ const Menu = () => {
           <BiCoffeeTogo size={100} className="text-lightBrown" />
         </div>
         <div className="flex justify-center">
-          <div className="text-center">
-            <h2 className="text-4xl font-mono tracking-widest text-white">
-              {/* <h2 className="text-4xl font-mono tracking-widest text-lightBrown"> */}
-              Menu
-            </h2>
-            <p className="pt-2 text-gray-400 tracking-wide">Made with love.</p>
-            <button className="text-white border-2 border-lightBrown bg-black py-2 px-10 my-4 rounded-xl font-nav tracking-widest hover:bg-black/10 hover:px-14 transition-all ease-in-out duration-500">
-              Order Online
-            </button>
-          </div>
+          {!fullMenu ? (
+            <div className="text-center">
+              <h2 className="text-4xl font-mono tracking-widest text-white">
+                Menu
+              </h2>
+              <p className="pt-2 text-gray-400 tracking-wide">
+                Made with love.
+              </p>
+              <Link href={"menu"}>
+                <button className="text-white border-2 border-lightBrown bg-black py-2 px-10 my-4 rounded-xl font-nav tracking-widest hover:bg-black/10 hover:px-14 transition-all ease-in-out duration-500">
+                  View Full Menu
+                </button>
+              </Link>
+            </div>
+          ) : (
+            <Link href={"/"}>
+              <div className="py-2 text-center">
+                <Logo size={"text-[60px]"} sub={true} />
+              </div>
+            </Link>
+          )}
         </div>
         <div className="hidden md:flex justify-center my-auto">
           <BiCoffee size={100} className="text-lightBrown" />
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
+      <div
+        className={
+          !fullMenu
+            ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-2"
+            : "grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 mt-2"
+        }
+      >
         <div className="bg-[#212121]/60 rounded-2xl p-3 border-solid border-4 border-darkBrown shadow-lg shadow-black">
           <p className={styles.label}>
             <span className="text-darkBrown">Coffee</span>
           </p>
           <div className="h-0.5 bg-darkBrown rounded-xl" />
           {coffee.map((item) => (
-            <Menuitem name={item.name} price={item.price} key={item.id} />
+            <Menuitem
+              name={item.name}
+              price={item.price}
+              key={item.id}
+              fullMenu={fullMenu}
+            />
           ))}
-          {/* <Menuitem name={"Espresso"} price={"3.00"} />
-          <Menuitem name={"Americano"} price={"4.25"} />
-          <Menuitem name={"Cappuccino"} price={"4.75"} />
-          <Menuitem name={"Latte"} price={"4.75"} />
-          <Menuitem name={"Flat White"} price={"3.75"} />
-          <Menuitem name={"Caramel Macchiato"} price={"5.75"} />
-          <Menuitem name={"Mocha"} price={"5.75"} />
-          <Menuitem name={"Cold Brew"} price={"4.75"} />
-          <Menuitem name={"Nitro Cold Brew"} price={"6.00"} />
-          <Menuitem name={"Iced Latte"} price={"5.75"} /> */}
         </div>
         <div className="bg-[#212121]/60 rounded-2xl p-3 border-solid border-4 border-[#21955F] shadow-lg shadow-black">
           <p className={styles.label}>
@@ -90,42 +104,40 @@ const Menu = () => {
           </p>
           <div className="h-0.5 bg-[#21955F] rounded-xl" />
           {tea.map((item) => (
-            <Menuitem name={item.name} price={item.price} key={item.id} />
+            <Menuitem
+              name={item.name}
+              price={item.price}
+              key={item.id}
+              fullMenu={fullMenu}
+            />
           ))}
-          {/* <Menuitem name={"Tea"} price={"4.00"} />
-          <Menuitem name={"Matcha Latte"} price={"5.50"} />
-          <Menuitem name={"Green Tea Latte"} price={"4.00"} />
-          <Menuitem name={"Turmeric Latte"} price={"5.50"} />
-          <Menuitem name={"Vanilla Chai Latte"} price={"5.00"} />
-          <Menuitem name={"Spiced Chai Latte"} price={"5.00"} />
-          <Menuitem name={"Fresh Iced Tea"} price={"3.50"} />
-          <Menuitem name={"Iced Matcha Latte"} price={"5.75"} />
-          <Menuitem name={"Iced Turmeric Latte"} price={"5.75"} />
-          <Menuitem name={"Iced Green Tea Latte"} price={"4.25"} /> */}
         </div>
-        <div className="bg-[#212121]/60 rounded-2xl md:col-span-2 p-3 lg:col-span-1 border-solid border-4 border-[#DC515F] shadow-lg shadow-black">
+        <div
+          className={
+            !fullMenu
+              ? "bg-[#212121]/60 rounded-2xl md:col-span-2 p-3 lg:col-span-1 border-solid border-4 border-[#DC515F] shadow-lg shadow-black"
+              : "bg-[#212121]/60 rounded-2xl md:col-span-1 p-3 lg:col-span-1 border-solid border-4 border-[#DC515F] shadow-lg shadow-black"
+          }
+        >
           <p className={styles.label}>
             <span className="text-[#DC515F]">Shakes</span>
           </p>
           <div className="h-0.5 bg-[#DC515F] rounded-xl" />
           {shakes.map((item) => (
-            <Menuitem name={item.name} price={item.price} key={item.id} />
+            <Menuitem
+              name={item.name}
+              price={item.price}
+              key={item.id}
+              fullMenu={fullMenu}
+            />
           ))}
-          {/* <Menuitem name={"Acai Energy"} price={"8.75"} />
-          <Menuitem name={"Berry Burst"} price={"8.75"} />
-          <Menuitem name={"Chunky Monkey"} price={"8.75"} />
-          <Menuitem name={"Green Goddess"} price={"8.75"} />
-          <Menuitem name={"Java Nut"} price={"8.75"} />
-          <Menuitem name={"Matcha Madness"} price={"8.75"} />
-          <Menuitem name={"Pitaya Passion"} price={"8.75"} />
-          <Menuitem name={"Protein Power"} price={"8.75"} />
-          <Menuitem name={"Wellness Colada"} price={"8.75"} />
-          <Menuitem name={"Custom Smoothie"} price={"9.50"} /> */}
         </div>
       </div>
-      <p className="text-gray-600 text-center py-2 -mb-4">
-        *medium size prices shown*
-      </p>
+      {!fullMenu ? (
+        <p className="text-gray-600 text-center py-2 -mb-4">
+          *medium size prices shown*
+        </p>
+      ) : null}
     </div>
   );
 };

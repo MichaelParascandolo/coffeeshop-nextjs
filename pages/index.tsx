@@ -19,7 +19,7 @@ export default function Home() {
           <Socials />
           <About />
           <Reviews />
-          <Menu />
+          <Menu fullMenu={false} />
           <Contact />
           <Socials />
           <Footer />
