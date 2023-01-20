@@ -65,29 +65,29 @@ const Navbar = () => {
           }
         >
           <ul className="pb-4 visible md:hidden">
-            <li className={styles.mobileItem}>
-              <Link href="/#about" onClick={() => setNav(!nav)}>
+            <Link href="/#about">
+              <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
                 About
-              </Link>
-            </li>
+              </li>
+            </Link>
             <div className="h-1 bg-darkBrown/70 w-[100%]" />
-            <li className={styles.mobileItem}>
-              <Link href="/#reviews" onClick={() => setNav(!nav)}>
+            <Link href="/#reviews">
+              <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
                 Reviews
-              </Link>
-            </li>
+              </li>
+            </Link>
             <div className="h-1 bg-darkBrown/70 w-[100%]" />
-            <li className={styles.mobileItem}>
-              <Link href="/menu" onClick={() => setNav(!nav)}>
+            <Link href="/menu">
+              <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
                 Menu
-              </Link>
-            </li>
+              </li>
+            </Link>
             <div className="h-1 bg-darkBrown/70 w-[100%]" />
-            <li className={styles.mobileItem}>
-              <Link href="/#contact" onClick={() => setNav(!nav)}>
+            <Link href="/#contact">
+              <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
                 Contact
-              </Link>
-            </li>
+              </li>
+            </Link>
             <div className="h-1 bg-darkBrown/70 w-[100%]" />
           </ul>
         </div>
