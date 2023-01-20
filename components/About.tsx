@@ -36,7 +36,7 @@ const About = () => {
             </div>
             <div className="justify-center flex mt-5">
               <div className="py-2 text-center">
-                <Logo size={"text-[60px]"} sub={true} />
+                <Logo size={"text-[50px]"} sub={true} />
               </div>
             </div>
           </div>

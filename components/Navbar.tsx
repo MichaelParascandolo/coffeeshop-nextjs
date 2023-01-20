@@ -23,7 +23,7 @@ const Navbar = () => {
       >
         <div className="flex justify-between">
           <Link href="/">
-            <div className="ml-4 p-3">
+            <div className="ml-4 p-3 cursor-pointer">
               <Logo size={"text-4xl"} sub={true} />
             </div>
           </Link>

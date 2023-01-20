@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { BiCoffeeTogo, BiCoffee } from "react-icons/bi";
 import Menuitem from "./Menuitem";
 import { db } from "./Firebase";
-import Logo from "./Logo";
 import Link from "next/link";
 
 const Menu = ({ fullMenu }: { fullMenu?: boolean }) => {
@@ -38,20 +37,18 @@ const Menu = ({ fullMenu }: { fullMenu?: boolean }) => {
   const styles = {
     label:
       "text-gray-800 font-nav text-2xl text-center tracking-widest font-bold select-none",
-    menu: "",
-    fullMenu: "",
   };
   return (
     <div
       className="shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D] rounded-lg bg-black/90 p-5 mt-5"
       id="menu"
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-center select-none">
-        <div className="hidden md:flex justify-center my-auto">
-          <BiCoffeeTogo size={100} className="text-lightBrown" />
-        </div>
-        <div className="flex justify-center">
-          {!fullMenu ? (
+      {!fullMenu ? (
+        <div className="grid grid-cols-1 md:grid-cols-3 justify-center select-none">
+          <div className="hidden md:flex justify-center my-auto">
+            <BiCoffeeTogo size={100} className="text-lightBrown" />
+          </div>
+          <div className="flex justify-center">
             <div className="text-center">
               <h2 className="text-4xl font-mono tracking-widest text-white">
                 Menu
@@ -65,18 +62,12 @@ const Menu = ({ fullMenu }: { fullMenu?: boolean }) => {
                 </button>
               </Link>
             </div>
-          ) : (
-            <Link href={"/"}>
-              <div className="py-2 text-center">
-                <Logo size={"text-[60px]"} sub={true} />
-              </div>
-            </Link>
-          )}
+          </div>
+          <div className="hidden md:flex justify-center my-auto">
+            <BiCoffee size={100} className="text-lightBrown" />
+          </div>
         </div>
-        <div className="hidden md:flex justify-center my-auto">
-          <BiCoffee size={100} className="text-lightBrown" />
-        </div>
-      </div>
+      ) : null}
       <div
         className={
           !fullMenu
