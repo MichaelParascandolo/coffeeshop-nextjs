@@ -4,7 +4,7 @@ import Logo from "./Logo";
 
 const About = () => {
   const styles = {
-    para: "pt-3 text-white",
+    p: "pt-3 text-white",
   };
   return (
     <>
@@ -22,12 +22,12 @@ const About = () => {
               <p className="pt-2 text-gray-400 tracking-wide">
                 Coffee is our passion.
               </p>
-              <p className={styles.para}>
+              <p className={styles.p}>
                 Focusing on the minute; being meticulous over every detail.
                 Everything we do is considered to give an unparalleled
                 experience of simplicity with substance.
               </p>
-              <p className={styles.para}>
+              <p className={styles.p}>
                 From the freshly ground beans, to the water quality used in the
                 end pour and everything in between, we obsess on every possible
                 variable. Our ambition is to serve great tasting coffee.
