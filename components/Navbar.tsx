@@ -64,33 +64,36 @@ const Navbar = () => {
               : "opacity-0 ease-in-out duration-300 transition-all"
           }
         >
-          <ul className="pb-4 visible md:hidden">
-            <Link href="/#about">
-              <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
-                About
-              </li>
-            </Link>
-            <div className="h-1 bg-darkBrown/70 w-[100%]" />
-            <Link href="/#reviews">
-              <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
-                Reviews
-              </li>
-            </Link>
-            <div className="h-1 bg-darkBrown/70 w-[100%]" />
-            <Link href="/menu">
-              <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
-                Menu
-              </li>
-            </Link>
-            <div className="h-1 bg-darkBrown/70 w-[100%]" />
-            <Link href="/#contact">
-              <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
-                Contact
-              </li>
-            </Link>
-            <div className="h-1 bg-darkBrown/70 w-[100%]" />
-          </ul>
+          {nav ? (
+            <ul className="pb-4 visible md:hidden">
+              <Link href="/#about">
+                <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
+                  About
+                </li>
+              </Link>
+              <div className="h-1 bg-darkBrown/70 w-[100%]" />
+              <Link href="/#reviews">
+                <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
+                  Reviews
+                </li>
+              </Link>
+              <div className="h-1 bg-darkBrown/70 w-[100%]" />
+              <Link href="/menu">
+                <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
+                  Menu
+                </li>
+              </Link>
+              <div className="h-1 bg-darkBrown/70 w-[100%]" />
+              <Link href="/#contact">
+                <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
+                  Contact
+                </li>
+              </Link>
+              <div className="h-1 bg-darkBrown/70 w-[100%]" />
+            </ul>
+          ) : null}
         </div>
+
         {/* mobile navbar end */}
       </div>
     </>
