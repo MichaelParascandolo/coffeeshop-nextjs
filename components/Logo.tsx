@@ -1,4 +1,3 @@
-import React from "react";
 import { GiCoffeeBeans } from "react-icons/gi";
 
 const Logo = ({ size, sub }: { size: string; sub?: boolean }) => {

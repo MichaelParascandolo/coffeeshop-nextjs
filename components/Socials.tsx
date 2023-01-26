@@ -1,4 +1,3 @@
-import React from "react";
 import { GrFacebook, GrInstagram, GrMail, GrTwitter } from "react-icons/gr";
 
 const Socials = () => {

@@ -1,5 +1,3 @@
-import React from "react";
-
 const Contact = () => {
   const styles = {
     itemHeader: "pt-2 text-lightBrown text-[20px] font-mono",

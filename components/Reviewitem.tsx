@@ -1,7 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { BsStarFill } from "react-icons/bs";
 import { FaGoogle, FaYelp } from "react-icons/fa";
+import { BsStarFill } from "react-icons/bs";
+import Image from "next/image";
 
 const Reviewitem = ({
   picture,

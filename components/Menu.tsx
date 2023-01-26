@@ -1,8 +1,8 @@
 import { collection, onSnapshot, query } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BiCoffeeTogo, BiCoffee } from "react-icons/bi";
-import Menuitem from "./Menuitem";
 import { db } from "./Firebase";
+import Menuitem from "./Menuitem";
 import Link from "next/link";
 
 const Menu = ({ fullMenu }: { fullMenu?: boolean }) => {
@@ -39,10 +39,7 @@ const Menu = ({ fullMenu }: { fullMenu?: boolean }) => {
       "text-gray-800 font-nav text-2xl text-center tracking-widest font-bold select-none",
   };
   return (
-    <div
-      className="shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D] rounded-lg bg-black/90 p-5 mt-5"
-      id="menu"
-    >
+    <div className="shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D] rounded-lg bg-black/90 p-5 mt-5">
       {!fullMenu ? (
         <div className="grid grid-cols-1 md:grid-cols-3 justify-center select-none">
           <div className="hidden md:flex justify-center my-auto">

@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React, { useState } from "react";
 import { ImMenu3, ImMenu4 } from "react-icons/im";
+import { useState } from "react";
+import Link from "next/link";
 import Logo from "./Logo";
 
 const Navbar = () => {
