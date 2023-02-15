@@ -2,15 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* background-position: right; */
 
 body {
   background-image: url("/assets/cover.jpg");
-  /* -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
-  @apply bg-auto md:bg-cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 html {
   scroll-behavior: smooth;
