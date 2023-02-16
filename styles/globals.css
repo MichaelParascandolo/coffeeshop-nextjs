@@ -5,9 +5,8 @@
 
 body {
   background-image: url("/assets/cover.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-size: cover; */
+  @apply bg-scroll md:bg-cover md:bg-fixed;
 }
 html {
   scroll-behavior: smooth;
