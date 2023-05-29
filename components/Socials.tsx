@@ -1,53 +1,51 @@
 import { GrFacebook, GrInstagram, GrMail, GrTwitter } from "react-icons/gr";
 
+interface SocialsProps {
+  link: string;
+  icon: JSX.Element;
+}
+
+const size: number = 30;
+
 const Socials = () => {
-  const styles = {
-    item: "font-nav text-lightBrown",
-    size: "30",
-    bar: "bg-white/50 h-[100] w-0.5 rounded-2xl",
-  };
+  const socialLinks: SocialsProps[] = [
+    {
+      link: "#",
+      icon: <GrFacebook size={size} />,
+    },
+    {
+      link: "#",
+      icon: <GrTwitter size={size} />,
+    },
+    {
+      link: "#",
+      icon: <GrInstagram size={size} />,
+    },
+    {
+      link: "#",
+      icon: <GrMail size={size} />,
+    },
+  ];
   return (
     <>
       <div className="bg-black/90 rounded-lg mt-5 py-2 text-white shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D]">
         <ul className="flex justify-around">
-          <a
-            href="#"
-            className="hover:scale-110 duration-300 eas-in-out transition-all"
-          >
-            <li className={styles.item}>
-              <GrFacebook size={styles.size} />
-            </li>
-          </a>
-          {/* <span className="text-white text-xl select-none">|</span> */}
-          <div className={styles.bar} />
-          <a
-            href="#"
-            className="hover:scale-110 duration-300 eas-in-out transition-all"
-          >
-            <li className={styles.item}>
-              <GrTwitter size={styles.size} />
-            </li>
-          </a>
-          {/* <span className="text-white text-xl select-none">|</span> */}
-          <div className={styles.bar} />
-          <a
-            href="#"
-            className="hover:scale-110 duration-300 eas-in-out transition-all"
-          >
-            <li className={styles.item}>
-              <GrInstagram size={styles.size} />
-            </li>
-          </a>
-          <div className={styles.bar} />
-          {/* <span className="text-white text-xl select-none">|</span> */}
-          <a
-            href="#"
-            className="hover:scale-110 duration-300 eas-in-out transition-all"
-          >
-            <li className={styles.item}>
-              <GrMail size={styles.size} />
-            </li>
-          </a>
+          {socialLinks.map((item, index) => {
+            return (
+              <>
+                <a
+                  href={item.link}
+                  className="hover:scale-110 duration-300 eas-in-out transition-all"
+                  key={index}
+                >
+                  <li className={"font-nav text-lightBrown"}>{item.icon}</li>
+                </a>
+                {index === socialLinks.length - 1 ? null : (
+                  <div className="bg-white/50 h-[100] w-0.5 rounded-2xl" />
+                )}
+              </>
+            );
+          })}
         </ul>
       </div>
     </>
