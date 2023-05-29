@@ -5,20 +5,33 @@ import Logo from "./Logo";
 
 const Navbar = () => {
   const [nav, setNav] = useState<boolean>(false);
-  const styles = {
-    item: "px-4 font-nav text-white tracking-widest",
-    link: "border-b-2 border-transparent cursor-pointer hover:border-lightBrown ease-in-out duration-300 transition-all",
-    mobileItem: "py-2 ml-4 font-nav text-white text-md",
-    container:
-      "bg-black/90 rounded-lg text-white mt-5 shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D]",
-  };
+  const navLinks: { name: string; link: string }[] = [
+    {
+      name: "About",
+      link: "/#about",
+    },
+    {
+      name: "Reviews",
+      link: "/#reviews",
+    },
+    {
+      name: "Menu",
+      link: "/menu",
+    },
+    {
+      name: "Contact",
+      link: "/#contact",
+    },
+  ];
+  const containerStyle: string =
+    "bg-black/90 rounded-lg text-white mt-5 shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D]";
   return (
     <>
-      <div
+      <div // when nav is open it will be 280px height and when closed it will be 100px height
         className={
           nav
-            ? `h-[280px] md:h-[100px] duration-300 ease-in-out transition-all ${styles.container}`
-            : `h-[100px] md:h-[100px] duration-300 ease-in-out transition-all ${styles.container}`
+            ? `h-[280px] md:h-[100px] duration-300 ease-in-out transition-all ${containerStyle}`
+            : `h-[100px] md:h-[100px] duration-300 ease-in-out transition-all ${containerStyle}`
         }
       >
         <div className="flex justify-between">
@@ -34,26 +47,17 @@ const Navbar = () => {
             {nav ? <ImMenu4 size={35} /> : <ImMenu3 size={35} />}
           </button>
           <div className="hidden my-auto mr-5 md:flex">
-            <span className={styles.item}>
-              <Link href="/#about">
-                <span className={styles.link}>About</span>
+            {navLinks.map((item, index) => (
+              <Link href={item.link} key={index}>
+                <span
+                  className={
+                    "border-b-2 px-4 font-nav text-white tracking-widest border-transparent cursor-pointer hover:border-lightBrown ease-in-out duration-300 transition-all"
+                  }
+                >
+                  {item.name}
+                </span>
               </Link>
-            </span>
-            <span className={styles.item}>
-              <Link href="/#reviews">
-                <span className={styles.link}>Reviews</span>
-              </Link>
-            </span>
-            <span className={styles.item}>
-              <Link href="/menu">
-                <span className={styles.link}>Menu</span>
-              </Link>
-            </span>
-            <span className={styles.item}>
-              <Link href="/#contact">
-                <span className={styles.link}>Contact</span>
-              </Link>
-            </span>
+            ))}
           </div>
         </div>
         {/* mobile navbar start */}
@@ -66,34 +70,22 @@ const Navbar = () => {
         >
           {nav ? (
             <ul className="pb-4 visible md:hidden">
-              <Link href="/#about">
-                <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
-                  About
-                </li>
-              </Link>
-              <div className="h-1 bg-darkBrown/70 w-[100%]" />
-              <Link href="/#reviews">
-                <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
-                  Reviews
-                </li>
-              </Link>
-              <div className="h-1 bg-darkBrown/70 w-[100%]" />
-              <Link href="/menu">
-                <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
-                  Menu
-                </li>
-              </Link>
-              <div className="h-1 bg-darkBrown/70 w-[100%]" />
-              <Link href="/#contact">
-                <li className={styles.mobileItem} onClick={() => setNav(!nav)}>
-                  Contact
-                </li>
-              </Link>
-              <div className="h-1 bg-darkBrown/70 w-[100%]" />
+              {navLinks.map((item, index) => (
+                <>
+                  <Link href={item.link} key={index}>
+                    <li
+                      className={"py-2 ml-4 font-nav text-white text-md"}
+                      onClick={() => setNav(!nav)}
+                    >
+                      {item.name}
+                    </li>
+                  </Link>
+                  <div className="h-1 bg-darkBrown/70 w-[100%]" />
+                </>
+              ))}
             </ul>
           ) : null}
         </div>
-
         {/* mobile navbar end */}
       </div>
     </>
