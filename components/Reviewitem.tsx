@@ -2,17 +2,14 @@ import { FaGoogle, FaYelp } from "react-icons/fa";
 import { BsStarFill } from "react-icons/bs";
 import Image from "next/image";
 
-const Reviewitem = ({
-  picture,
-  text,
-  google,
-  name,
-}: {
+interface ReviewItemProps {
   picture: string;
   text: string;
   google: boolean;
   name: string;
-}) => {
+}
+
+const Reviewitem = ({ picture, text, google, name }: ReviewItemProps) => {
   const styles = {
     box: "shadow-lg shadow-gray-900 border-solid border-2 border-[#14261D] rounded-lg bg-black/90 p-3 select-none",
     star: "text-yellow-300 text-xl mx-1.5",

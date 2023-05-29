@@ -1,10 +1,38 @@
 import Reviewitem from "./Reviewitem";
 
-// example
-// https://randomuser.me/api/?gender=female
-// https://randomuser.me/api/portraits/thumb/women/50.jpg
-// https://randomuser.me/api/portraits/med/women/89.jpg
-// https://randomuser.me/api/portraits/men/89.jpg
+interface ReviewItemProps {
+  name: string;
+  text: string;
+  gender: string;
+  google: boolean;
+}
+
+const reviews: ReviewItemProps[] = [
+  {
+    name: "Customer Name",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing",
+    gender: "women",
+    google: true,
+  },
+  {
+    name: "Customer Name",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing",
+    gender: "men",
+    google: false,
+  },
+  {
+    name: "Customer Name",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing",
+    gender: "women",
+    google: true,
+  },
+  {
+    name: "Customer Name",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing",
+    gender: "men",
+    google: false,
+  },
+];
 
 const Reviews = () => {
   return (
@@ -13,38 +41,19 @@ const Reviews = () => {
         className="justify-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-[100%] mt-5"
         id="reviews"
       >
-        <Reviewitem
-          picture={`https://randomuser.me/api/portraits/women/${Math.floor(
-            Math.random() * 50
-          )}.jpg`}
-          text={"Lorem ipsum dolor sit amet consectetur adipisicing"}
-          google={true}
-          name={"Customer Name"}
-        />
-        <Reviewitem
-          picture={`https://randomuser.me/api/portraits/men/${Math.floor(
-            Math.random() * 50
-          )}.jpg`}
-          text={"Lorem ipsum dolor sit amet consectetur adipisicing"}
-          google={false}
-          name={"Customer Name"}
-        />
-        <Reviewitem
-          picture={`https://randomuser.me/api/portraits/women/${Math.floor(
-            Math.random() * 50
-          )}.jpg`}
-          text={"Lorem ipsum dolor sit amet consectetur adipisicing"}
-          google={true}
-          name={"Customer Name"}
-        />
-        <Reviewitem
-          picture={`https://randomuser.me/api/portraits/men/${Math.floor(
-            Math.random() * 50
-          )}.jpg`}
-          text={"Lorem ipsum dolor sit amet consectetur adipisicing"}
-          google={false}
-          name={"Customer Name"}
-        />
+        {reviews.map((item, index) => (
+          <>
+            <Reviewitem
+              key={index}
+              picture={`https://randomuser.me/api/portraits/${
+                item.gender
+              }/${Math.floor(Math.random() * 50)}.jpg`}
+              text={item.text}
+              google={item.google}
+              name={item.name}
+            />
+          </>
+        ))}
       </div>
     </>
   );
