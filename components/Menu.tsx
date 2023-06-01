@@ -5,14 +5,22 @@ import { db } from "./Firebase";
 import Menuitem from "./Menuitem";
 import Link from "next/link";
 
-const Menu = ({ fullMenu }: { fullMenu?: boolean }) => {
-  const [coffee, setCoffee] = useState([]);
-  const [tea, setTea] = useState([]);
-  const [shakes, setShakes] = useState([]);
+export interface MenuItemProps {
+  name: string;
+  type?: string;
+  price: number;
+  fullMenu?: boolean | undefined;
+}
 
-  useEffect(() => {
+const Menu = ({ fullMenu }: { fullMenu?: boolean }) => {
+  const [coffee, setCoffee] = useState<MenuItemProps[]>([]);
+  const [tea, setTea] = useState<MenuItemProps[]>([]);
+  const [shakes, setShakes] = useState<MenuItemProps[]>([]);
+
+  const getMenuData = () => {
     const data = query(collection(db, "drinks"));
     onSnapshot(data, (querySnapshot) => {
+      // unsorted array
       let coffeeArr = [];
       let teaArr = [];
       let shakesArr = [];
@@ -32,6 +40,10 @@ const Menu = ({ fullMenu }: { fullMenu?: boolean }) => {
       setTea(teaArr.sort((a, b) => (a.price > b.price ? 1 : -1)));
       setShakes(shakesArr.sort((a, b) => (a.price > b.price ? 1 : -1)));
     });
+  };
+
+  useEffect(() => {
+    getMenuData();
   }, []);
 
   const styles = {
@@ -77,11 +89,11 @@ const Menu = ({ fullMenu }: { fullMenu?: boolean }) => {
             <span className="text-darkBrown">Coffee</span>
           </p>
           <div className="h-0.5 bg-darkBrown rounded-xl" />
-          {coffee.map((item) => (
+          {coffee.map((item, index) => (
             <Menuitem
               name={item.name}
               price={item.price}
-              key={item.id}
+              key={index}
               fullMenu={fullMenu}
             />
           ))}
@@ -91,11 +103,11 @@ const Menu = ({ fullMenu }: { fullMenu?: boolean }) => {
             <span className="text-[#21955F]">Tea</span>
           </p>
           <div className="h-0.5 bg-[#21955F] rounded-xl" />
-          {tea.map((item) => (
+          {tea.map((item, index) => (
             <Menuitem
               name={item.name}
               price={item.price}
-              key={item.id}
+              key={index}
               fullMenu={fullMenu}
             />
           ))}
@@ -111,11 +123,11 @@ const Menu = ({ fullMenu }: { fullMenu?: boolean }) => {
             <span className="text-[#DC515F]">Shakes</span>
           </p>
           <div className="h-0.5 bg-[#DC515F] rounded-xl" />
-          {shakes.map((item) => (
+          {shakes.map((item, index) => (
             <Menuitem
               name={item.name}
               price={item.price}
-              key={item.id}
+              key={index}
               fullMenu={fullMenu}
             />
           ))}
